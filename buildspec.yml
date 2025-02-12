@@ -2,16 +2,15 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing HTTPD
-      - sudo apt -y update
-      - sudo apt install httpd -y
+      - echo "Installing dependencies..."
+      - sudo apt-get update -y
+      - sudo apt-get install -y apache2
   build:
     commands:
-      - echo build started on 'date'
-      - cp /index.html /var/www/html/
+      - echo "Build started on $(date)"
   post_build:
     commands:
-      - echo configuring HTTPD
+      - echo "Configuration completed."
 artifacts:
   files:
-    - /var/www/html/index.html
+    - '**/*'

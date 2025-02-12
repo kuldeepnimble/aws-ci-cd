@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo Installing HTTPD
+      - sudo yum -y update
+      - sudo yum install httpd -y
+  build:
+    commands:
+      - echo build started on 'date'
+      - cp /index.html /var/www/html/
+  post_build:
+    commands:
+      - echo configuring HTTPD
+artifacts:
+  files:
+    - /var/www/html/index.html

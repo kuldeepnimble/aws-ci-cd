@@ -1,14 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
+  - source: index.html  # Remove the leading slash
     destination: /var/www/html/
+  - source: scripts/  # Ensure the scripts folder is copied
+    destination: /home/ubuntu/scripts/
+
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies
+    - location: /home/ubuntu/scripts/install_dependencies  # Use absolute path after deployment
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/start_httpd
+    - location: /home/ubuntu/scripts/start_httpd  # Same here
       timeout: 300
       runas: root

@@ -3,8 +3,8 @@ phases:
   install:
     commands:
       - echo Installing HTTPD
-      - sudo yum -y update
-      - sudo yum install httpd -y
+      - sudo apt -y update
+      - sudo apt install httpd -y
   build:
     commands:
       - echo build started on 'date'

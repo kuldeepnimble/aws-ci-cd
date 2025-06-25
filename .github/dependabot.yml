@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # or "pip", "composer", "docker", etc.
+    directory: "/"           # Location of your package file
+    schedule:
+      interval: "daily"      # Options: "daily", "weekly", "monthly"
+    open-pull-requests-limit: 5
+    allow:
+      - dependency-type: "all" # Options: "direct", "indirect", "all"
+    ignore:
+      - dependency-name: "some-package"
+        versions: [">=1.0.0"]

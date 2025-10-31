@@ -52,7 +52,7 @@
 		"swagger-ui-express": "^5.0.1"
 	},
 	"devDependencies": {
-		"cross-env": "^7.0.3",
+		"cross-env": "^10.1.0",
 		"swagger-autogen": "^2.23.7"
 	}
 }
